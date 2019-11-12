@@ -15,22 +15,25 @@ const styles = theme => ({
   },
   noPadding: {
     padding: 0
-  }
+  },
+
 });
 
 const PortletContent = props => {
-  const { classes, className, children, noPadding, maxHeight, contentStyle, ...rest } = props;
+  const { classes, className, children, noPadding, maxHeight,minHeight, contentStyle, ...rest } = props;
 
   const rootClassName = classNames(
     {
       [classes.root]: true,
-      [classes.noPadding]: noPadding
+      [classes.noPadding]: noPadding,
+  
+      
     },
     className
   );
 
   return (
-    <div className={rootClassName} style={{ maxHeight, ...contentStyle }} {...rest}>
+    <div className={rootClassName} style={{ maxHeight,minHeight, ...contentStyle }} {...rest}>
       {children}
     </div>
   );
@@ -40,6 +43,7 @@ PortletContent.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   maxHeight: PropTypes.number,
+  minHeight: PropTypes.number,
   classes: PropTypes.object.isRequired,
   noPadding: PropTypes.bool
 };

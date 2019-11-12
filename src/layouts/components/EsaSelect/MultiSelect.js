@@ -19,7 +19,9 @@ const MultiSelect = props => {
   const { classes, className, label, id, value, onChange, options, shrink, ...rest } = props;
 
   const rootClassName = classNames(classes.formControl, className);
+ 
 
+ 
   return (
     <FormControl {...rest} className={rootClassName}>
       <InputLabel htmlFor={id} shrink={shrink}>

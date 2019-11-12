@@ -29,8 +29,9 @@ const EsaButton = withStyles(theme => ({
       })
     }
   }
-}))(({ classes, className, children, loading, color, variant, ...rest }) => (
+}))(({ classes, className, children, loading, color,isDisabled, variant, ...rest }) => (
   <Button
+  disabled={isDisabled}
     {...rest}
     variant={variant}
     className={classnames(className, { [classes.root]: variant === 'contained' })}
@@ -44,6 +45,7 @@ EsaButton.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object,
   loading: PropTypes.bool,
+  isDisabled: PropTypes.bool,
   color: PropTypes.oneOf(['default', 'primary', 'secondary', 'info', 'danger', 'dark']),
   variant: PropTypes.oneOf(['text', 'outlined', 'contained'])
 };

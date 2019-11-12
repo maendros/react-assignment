@@ -83,6 +83,7 @@ export default function Earthnet() {
     setSelect(newSelectedOptions);
   };
 
+
   const isSelected = value => selectedOptions.includes(value);
 
   return (
